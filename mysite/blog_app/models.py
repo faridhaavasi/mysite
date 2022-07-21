@@ -11,7 +11,7 @@ class Artcel(models.Model):
     description=models.TextField(max_length=50)
     image=models.ImageField(null=True,upload_to='blog_app')
     activate=models.BooleanField(default=True)
-    status=models.CharField(default='d',choices=STATUS_CHIOCES)
+    status=models.CharField(default='d',choices=STATUS_CHIOCES,max_length=2)
     views=models.IntegerField(default=0)
 
 
