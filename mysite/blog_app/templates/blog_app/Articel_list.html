@@ -29,12 +29,15 @@ tr:nth-child(even) {
     <th>title</th>
     <th>description</th>
     <th>activate</th>
+    <th>views</th>
+
   </tr>
   {% for articel in articels %}
   <tr>
     <td><a href="detail/{{articel.id}}">{{articel.title}}</a></td>
     <td>{{articel.description}}</td>
     <td>{{articel.activate}}</td>
+    <td>{{articel.views}}</td>
   </tr>
   
   {% endfor %}

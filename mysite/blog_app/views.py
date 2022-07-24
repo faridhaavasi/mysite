@@ -14,4 +14,6 @@ def Articel_list(request):
 
 def detail(request,id):
     articel=Artcel.objects.get(id=id)
+    articel.views+=1
+    articel.save()
     return render (request,'blog_app/detail.html',{'articel':articel})
