@@ -1,6 +1,6 @@
 
 
-from django.shortcuts import render 
+from django.shortcuts import render ,redirect
 
 from .models import Artcel
 
@@ -17,3 +17,15 @@ def detail(request,id):
     articel.views+=1
     articel.save()
     return render (request,'blog_app/detail.html',{'articel':articel})
+
+def add_articel(request):
+    title=request.GET.get('title')
+    description=request.GET.get('description')
+    print(title)
+    print(description)
+    if title and description:
+        Artcel.objects.create(title=title,description=description)
+             
+ 
+
+    return render (request,'blog_app/add_article.html')
