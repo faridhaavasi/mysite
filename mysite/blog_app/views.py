@@ -25,6 +25,7 @@ def add_articel(request):
     print(description)
     if title and description:
         Artcel.objects.create(title=title,description=description)
+        return redirect('/articel_list')
              
  
 
