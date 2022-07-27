@@ -1,6 +1,7 @@
 <h1>ticketing</h1>
 
-<form method=get>
+<form method="post">
+  {% csrf_token %}
   <label for="fname">title:</label>
   <input type="text" id="fname" name="title"><br><br>
 <hr>
