@@ -19,13 +19,17 @@ def detail(request,id):
     return render (request,'blog_app/detail.html',{'articel':articel})
 
 def add_articel(request):
-    title=request.GET.get('title')
-    description=request.GET.get('description')
-    print(title)
-    print(description)
-    if title and description:
-        Artcel.objects.create(title=title,description=description)
-        return redirect('/articel_list')
+    #title=request.GET.get('title')
+    #description=request.GET.get('description')
+    #print(title)
+    #print(description)
+    # method POST
+    if request.method=="POST":
+        title=request.POST.get('title')
+        description=request.POST.get('description')
+        if title and description:
+            Artcel.objects.create(title=title,description=description)
+            return redirect('/articel_list')
              
  
 
